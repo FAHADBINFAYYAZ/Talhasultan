@@ -1,0 +1,80 @@
+public class Developer {
+
+    private String name;
+    private int experienceInYears;
+    private List<String> programmingLanguages;
+    private String githubUsername;
+    private String stackOverflowId;
+
+    public Developer(String name, int experienceInYears, List<String> programmingLanguages) {
+        setName(name);
+        setExperienceInYears(experienceInYears);
+        setProgrammingLanguages(programmingLanguages);
+        this.githubUsername = "not_applicable";
+        this.stackOverflowId = "not_applicable";
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        if (name == null || name.isEmpty()) {
+            throw new IllegalArgumentException("Name cannot be null or empty");
+        }
+        this.name = name;
+    }
+
+    public int getExperienceInYears() {
+        return experienceInYears;
+    }
+
+    public void setExperienceInYears(int experienceInYears) {
+        if (experienceInYears < 0) {
+            throw new IllegalArgumentException("Experience cannot be negative");
+        }
+        this.experienceInYears = experienceInYears;
+    }
+
+    public List<String> getProgrammingLanguages() {
+        return programmingLanguages;
+    }
+
+    public void setProgrammingLanguages(List<String> programmingLanguages) {
+        if (programmingLanguages == null || programmingLanguages.isEmpty()) {
+            throw new IllegalArgumentException("Programming languages cannot be null or empty");
+        }
+        this.programmingLanguages = programmingLanguages;
+    }
+
+    // Getters for private attributes (optional)
+
+    public String getGithubUsername() {
+        return githubUsername;
+    }
+
+    public String getStackOverflowId() {
+        return stackOverflowId;
+    }
+
+    public void writeCode(String projectName) {
+        System.out.println("Writing code for project: " + projectName);
+    }
+
+    public void debugCode(String issueDescription) {
+        System.out.println("Debugging code: " + issueDescription);
+    }
+
+    public void designArchitecture(String systemName) {
+        System.out.println("Designing architecture for system: " + systemName);
+    }
+
+    public void contributeToOpenSource(String projectName) {
+        System.out.println("Contributing to open source project: " + projectName);
+    }
+
+    public void learnNewLanguage(String languageName) {
+        System.out.println("Learning new programming language: " + languageName);
+        programmingLanguages.add(languageName);
+    }
+}
